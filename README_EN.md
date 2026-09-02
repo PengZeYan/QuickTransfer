@@ -4,6 +4,20 @@
 
 QuickTransfer is a full-stack file transfer system designed for temporary file delivery. It supports file sending, pickup-code retrieval, file collection, account entitlements, upload traffic management, and administrator settings while keeping the control plane and storage plane separated.
 
+## Interface Preview
+
+### Send Files
+
+![QuickTransfer send-files interface](docs/images/quicktransfer-send.png)
+
+### Retrieve Files
+
+![QuickTransfer pickup-code interface](docs/images/quicktransfer-pickup.png)
+
+### Collect Files
+
+![QuickTransfer file-collection interface](docs/images/quicktransfer-collect.png)
+
 ## Features
 
 - Transfer individual files, multiple files, or folders

@@ -4,6 +4,20 @@
 
 QuickTransfer 是一个面向临时文件交付场景的全栈文件传输系统。它提供文件发送、取件码领取、文件收集、账号权益、流量管理和管理员设置，并将业务控制与文件存储拆分为独立边界。
 
+## 界面预览
+
+### 发文件
+
+![QuickTransfer 发文件界面](docs/images/quicktransfer-send.png)
+
+### 取文件
+
+![QuickTransfer 取文件界面](docs/images/quicktransfer-pickup.png)
+
+### 收集文件
+
+![QuickTransfer 收集文件界面](docs/images/quicktransfer-collect.png)
+
 ## 主要能力
 
 - 支持单文件、多文件和文件夹传输
