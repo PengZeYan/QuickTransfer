@@ -1,0 +1,21 @@
+{
+  "name": "quicktransfer",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:binaries": "go build -trimpath -o dist/quicktransfer.exe ./cmd/quicktransfer && go build -trimpath -o dist/quicktransfer-admin.exe ./cmd/quicktransfer-admin && go build -trimpath -o dist/quicktransfer-storage.exe ./cmd/quicktransfer-storage && go build -trimpath -o dist/quicktransfer-migrate-storage.exe ./cmd/quicktransfer-migrate-storage",
+    "build:all": "npm run build && npm run build:binaries",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "@vitejs/plugin-react": "5.0.4",
+    "qrcode.react": "^4.2.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "vite": "6.4.3"
+  }
+}

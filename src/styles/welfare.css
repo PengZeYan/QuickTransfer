@@ -1,0 +1,526 @@
+.welfare-page {
+  min-height: 100vh;
+}
+
+.welfare-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.72fr) minmax(600px, 1.28fr);
+  gap: 24px;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 58px 0 100px;
+  align-items: stretch;
+}
+
+.welfare-claim-card,
+.welfare-calendar-card,
+.welfare-empty-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(133, 121, 224, 0.24);
+  border-radius: 28px;
+  background:
+    linear-gradient(145deg, rgba(19, 22, 57, 0.84), rgba(7, 11, 31, 0.91)),
+    rgba(8, 12, 31, 0.82);
+  box-shadow:
+    0 32px 80px rgba(0, 0, 0, 0.36),
+    inset 0 1px rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(24px);
+}
+
+.welfare-claim-card::before,
+.welfare-calendar-card::before {
+  position: absolute;
+  z-index: 0;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+  filter: blur(18px);
+}
+
+.welfare-claim-card::before {
+  top: -150px;
+  right: -115px;
+  background: radial-gradient(circle, rgba(142, 67, 255, 0.28), transparent 68%);
+}
+
+.welfare-calendar-card::before {
+  right: -130px;
+  bottom: -175px;
+  background: radial-gradient(circle, rgba(42, 118, 255, 0.2), transparent 68%);
+}
+
+.welfare-claim-card > *,
+.welfare-calendar-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.welfare-claim-card {
+  display: flex;
+  min-height: 610px;
+  flex-direction: column;
+  padding: 34px;
+}
+
+.welfare-claim-card .eyebrow {
+  align-self: flex-start;
+}
+
+.welfare-gift-mark {
+  display: grid;
+  width: 94px;
+  height: 94px;
+  margin-top: 54px;
+  place-items: center;
+  border: 1px solid rgba(158, 115, 255, 0.48);
+  border-radius: 27px;
+  background:
+    radial-gradient(circle at 36% 30%, rgba(182, 123, 255, 0.24), transparent 55%),
+    rgba(30, 33, 79, 0.68);
+  color: #b996ff;
+  box-shadow:
+    0 0 42px rgba(112, 62, 255, 0.22),
+    inset 0 0 24px rgba(78, 109, 255, 0.1);
+}
+
+.welfare-gift-mark svg {
+  width: 44px;
+  height: 44px;
+}
+
+.welfare-claim-copy {
+  margin-top: 32px;
+}
+
+.welfare-claim-copy > p:first-child {
+  margin: 0 0 12px;
+  color: #9da6c7;
+  font-size: 13px;
+}
+
+.welfare-claim-copy h1 {
+  margin: 0;
+  color: #f7f7ff;
+  font-size: clamp(34px, 3.25vw, 48px);
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+}
+
+.welfare-claim-copy > p:last-child {
+  max-width: 360px;
+  margin: 22px 0 0;
+  color: #8c95b4;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.welfare-claim-button {
+  width: 100%;
+  min-height: 58px;
+  margin-top: auto;
+  gap: 9px;
+}
+
+.welfare-claim-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.welfare-claim-card > small {
+  margin-top: 13px;
+  color: #666f8e;
+  font-size: 10px;
+  text-align: center;
+}
+
+.welfare-calendar-card {
+  min-height: 610px;
+  padding: 32px;
+}
+
+.welfare-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.welfare-calendar-header span {
+  color: #8274c2;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+.welfare-calendar-header h2 {
+  margin: 7px 0 0;
+  color: #f4f4ff;
+  font-size: 25px;
+  letter-spacing: -0.025em;
+}
+
+.welfare-calendar-header > svg {
+  width: 34px;
+  height: 34px;
+  color: #846dff;
+}
+
+.welfare-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.welfare-stats > div {
+  min-width: 0;
+  padding: 14px 15px;
+  border: 1px solid rgba(126, 130, 188, 0.14);
+  border-radius: 15px;
+  background: rgba(6, 10, 29, 0.48);
+}
+
+.welfare-stats span,
+.welfare-stats strong {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.welfare-stats span {
+  color: #6f7898;
+  font-size: 10px;
+}
+
+.welfare-stats strong {
+  margin-top: 7px;
+  color: #e9eaff;
+  font-size: 15px;
+}
+
+.welfare-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 7px;
+  min-width: 0;
+}
+
+.welfare-weekday {
+  padding: 4px 0 8px;
+  color: #697392;
+  font-size: 10px;
+  text-align: center;
+}
+
+.welfare-day {
+  display: grid;
+  min-width: 0;
+  min-height: 68px;
+  align-content: space-between;
+  gap: 8px;
+  padding: 10px 8px;
+  overflow: hidden;
+  border: 1px solid rgba(111, 120, 172, 0.12);
+  border-radius: 13px;
+  background: rgba(5, 9, 27, 0.48);
+  color: #8d96b4;
+}
+
+.welfare-day > span {
+  font-size: 11px;
+}
+
+.welfare-day > strong {
+  min-width: 0;
+  overflow: hidden;
+  color: #626b88;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.welfare-day.is-claimed {
+  border-color: rgba(104, 102, 255, 0.34);
+  background:
+    linear-gradient(145deg, rgba(99, 56, 207, 0.2), rgba(28, 68, 147, 0.14)),
+    rgba(9, 13, 36, 0.64);
+  color: #ddd7ff;
+  box-shadow: inset 0 0 20px rgba(101, 86, 255, 0.06);
+}
+
+.welfare-day.is-claimed > strong {
+  color: #a9d8ff;
+}
+
+.welfare-day.is-today {
+  border-color: rgba(183, 121, 255, 0.72);
+  box-shadow:
+    0 0 20px rgba(120, 72, 255, 0.12),
+    inset 0 0 18px rgba(145, 74, 255, 0.08);
+}
+
+.welfare-day.is-future {
+  opacity: 0.48;
+}
+
+.welfare-day.is-empty {
+  visibility: hidden;
+}
+
+.welfare-empty-card {
+  grid-column: 1 / -1;
+  min-height: 460px;
+}
+
+body.welfare-reminder-open {
+  overflow: hidden;
+}
+
+.welfare-reminder-layer {
+  position: fixed;
+  z-index: 4400;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(2, 4, 15, 0.76);
+  backdrop-filter: blur(14px);
+  animation: welfare-backdrop-enter 180ms ease both;
+}
+
+.welfare-reminder {
+  position: relative;
+  display: flex;
+  width: min(430px, 100%);
+  flex-direction: column;
+  align-items: center;
+  padding: 38px 34px 30px;
+  overflow: hidden;
+  border: 1px solid rgba(167, 117, 255, 0.5);
+  border-radius: 27px;
+  background:
+    radial-gradient(circle at 50% -10%, rgba(143, 69, 255, 0.28), transparent 45%),
+    linear-gradient(145deg, rgba(20, 21, 57, 0.98), rgba(6, 10, 29, 0.98));
+  box-shadow:
+    0 38px 110px rgba(0, 0, 0, 0.62),
+    0 0 70px rgba(76, 52, 224, 0.18);
+  text-align: center;
+  animation: welfare-reminder-enter 240ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.welfare-reminder-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 0;
+  border-radius: 11px;
+  background: transparent;
+  color: #7e87a6;
+  cursor: pointer;
+}
+
+.welfare-reminder-close:hover {
+  background: rgba(130, 104, 224, 0.12);
+  color: #fff;
+}
+
+.welfare-reminder-close svg {
+  width: 18px;
+  height: 18px;
+}
+
+.welfare-reminder-icon {
+  display: grid;
+  width: 84px;
+  height: 84px;
+  margin-bottom: 22px;
+  place-items: center;
+  border: 1px solid rgba(173, 119, 255, 0.46);
+  border-radius: 25px;
+  background: rgba(74, 51, 151, 0.24);
+  color: #bd9bff;
+  box-shadow: 0 0 42px rgba(124, 73, 255, 0.22);
+}
+
+.welfare-reminder-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.welfare-reminder > span {
+  color: #9b84ef;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.welfare-reminder h2 {
+  margin: 10px 0 0;
+  color: #f8f7ff;
+  font-size: 26px;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+}
+
+.welfare-reminder p {
+  max-width: 340px;
+  margin: 16px 0 25px;
+  color: #939bb8;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.welfare-reminder-primary {
+  width: 100%;
+  min-height: 54px;
+  gap: 8px;
+}
+
+.welfare-reminder-primary svg {
+  width: 19px;
+  height: 19px;
+}
+
+.welfare-reminder-later {
+  margin-top: 12px;
+  padding: 7px 14px;
+  border: 0;
+  background: transparent;
+  color: #747d9c;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.welfare-reminder-later:hover {
+  color: #c4c8d9;
+}
+
+@keyframes welfare-backdrop-enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes welfare-reminder-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 1000px) {
+  .welfare-layout {
+    grid-template-columns: 1fr;
+    max-width: 720px;
+    padding-top: 42px;
+  }
+
+  .welfare-claim-card {
+    min-height: 500px;
+  }
+
+  .welfare-calendar-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .welfare-layout {
+    gap: 14px;
+    padding: 28px 0 72px;
+  }
+
+  .welfare-claim-card,
+  .welfare-calendar-card {
+    border-radius: 22px;
+  }
+
+  .welfare-claim-card {
+    min-height: 470px;
+    padding: 24px 20px;
+  }
+
+  .welfare-gift-mark {
+    width: 76px;
+    height: 76px;
+    margin-top: 38px;
+    border-radius: 22px;
+  }
+
+  .welfare-gift-mark svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .welfare-claim-copy {
+    margin-top: 26px;
+  }
+
+  .welfare-claim-copy h1 {
+    font-size: 36px;
+  }
+
+  .welfare-calendar-card {
+    padding: 22px 14px 18px;
+  }
+
+  .welfare-stats {
+    gap: 6px;
+    margin: 20px 0 16px;
+  }
+
+  .welfare-stats > div {
+    padding: 11px 8px;
+    border-radius: 12px;
+  }
+
+  .welfare-stats strong {
+    font-size: 12px;
+  }
+
+  .welfare-calendar {
+    gap: 4px;
+  }
+
+  .welfare-day {
+    min-height: 54px;
+    gap: 5px;
+    padding: 7px 4px;
+    border-radius: 10px;
+  }
+
+  .welfare-day > span {
+    font-size: 10px;
+  }
+
+  .welfare-day > strong {
+    font-size: 8px;
+  }
+
+  .welfare-reminder-layer {
+    align-items: end;
+    padding: 10px;
+  }
+
+  .welfare-reminder {
+    width: 100%;
+    padding: 34px 22px 24px;
+    border-radius: 24px;
+  }
+
+  .welfare-reminder h2 {
+    font-size: 23px;
+  }
+}

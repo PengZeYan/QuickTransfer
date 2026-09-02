@@ -1,0 +1,49 @@
+# Dependencies and build outputs
+node_modules/
+dist/
+Temp/
+artifacts/
+deploy/
+tests/
+**/*_test.go
+.openai/
+worker/
+scripts/
+
+# Runtime state
+data/
+config/*.settings.json
+config/*.local.json
+*.db
+*.db-shm
+*.db-wal
+*.pid
+*.log
+
+# Secrets and environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+
+# Generated packages and binaries
+*.exe
+*.zip
+*.tar
+*.tar.gz
+$cover
+coverage/
+**/__pycache__/
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Internal agent instructions
+AGENTS.md
