@@ -1,5 +1,7 @@
 # QuickTransfer 快传
 
+[简体中文](README.md) | [English](README_EN.md)
+
 QuickTransfer 是一个面向临时文件交付场景的全栈文件传输系统。它提供文件发送、取件码领取、文件收集、账号权益、流量管理和管理员设置，并将业务控制与文件存储拆分为独立边界。
 
 ## 主要能力
